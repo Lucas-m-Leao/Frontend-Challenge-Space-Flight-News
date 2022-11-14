@@ -1,13 +1,12 @@
-import Head from 'next/head'
+import { useState } from 'react'
 import Modal from '../components/modal'
-import { Container } from '../styles/modal'
-
+import Nav from '../components/nav'
 export default function Home() {
+    const [modal, setModal] = useState(false)
     return (
-        <div>
-            <Container>
-                <h1> NextJS Blog with Butter CMS</h1>
-            </Container>
-        </div>
+        <>
+            <Nav />
+            {modal && <Modal />}
+        </>
     )
 }

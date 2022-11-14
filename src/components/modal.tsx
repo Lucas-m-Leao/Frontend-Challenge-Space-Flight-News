@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container } from '../styles/modal'
+import { Container, ContainerModal } from '../styles/modal'
 
-export default function Modal() {
+const Modal = ({}) => {
     return (
         <Container>
-            <div>ola</div>
+            <ContainerModal></ContainerModal>
         </Container>
     )
 }
+export default Modal

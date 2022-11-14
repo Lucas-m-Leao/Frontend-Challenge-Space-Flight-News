@@ -43,16 +43,10 @@ export default class MyDocument extends Document {
             <Html lang="pt">
                 <Head>
                     <meta charSet="utf-8" />
-
                     <link
-                        href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
+                        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;1,400&display=swap"
                         rel="stylesheet"
-                    />
-
-                    <link
-                        rel="icon"
-                        href="https://rocketseat.com.br/favicon.ico"
-                    />
+                    ></link>
                 </Head>
                 <body>
                     <Main />
