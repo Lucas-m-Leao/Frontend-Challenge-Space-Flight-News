@@ -7,6 +7,9 @@ export default createGlobalStyle`
     box-sizing: border-box;
 }
 body{
-
+    font-family: 'Roboto Condensed', sans-serif;
+}
+ul, ol, li {
+        list-style: none;
 }
 `

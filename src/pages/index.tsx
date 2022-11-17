@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import Card from '../components/card'
 import Modal from '../components/modal'
 import Nav from '../components/nav'
+import { ArticlesContext, IArticle } from '../context/ArticlesContext'
 export default function Home() {
-    const [modal, setModal] = useState(false)
+    const [article, setArticle] = useState<IArticle>({} as IArticle)
+    const { modal } = useContext(ArticlesContext)
+    useEffect(() => {
+        document.body.style.overflow = modal ? 'hidden' : 'auto'
+    }, [modal])
     return (
-        <>
+        <div>
+            {modal && <Modal article={article} />}
             <Nav />
-            {modal && <Modal />}
-        </>
+            <Card setArticle={setArticle} />
+        </div>
     )
 }
