@@ -1,10 +1,12 @@
 import React, { Dispatch, SetStateAction, useContext } from 'react'
 import { ArticlesContext, IArticle } from '../context/ArticlesContext'
 import {
+    ButtonModal,
     CardConteiner,
     DateContainer,
     ImgContainer,
     SectionConteiner,
+    SpanContainer,
     TexTContainer,
 } from '../styles/card'
 
@@ -36,7 +38,9 @@ const Card = ({ setArticle }: ISetArticle) => {
                                     <h2>{title}</h2>
                                     <DateContainer>
                                         <span>{date}</span>
-                                        <span>{newsSite}</span>
+                                        <SpanContainer>
+                                            {newsSite}
+                                        </SpanContainer>
                                     </DateContainer>
                                     <p>{summary}</p>
                                     <div>
@@ -55,11 +59,11 @@ const Card = ({ setArticle }: ISetArticle) => {
                     )
                 })}
             </ul>
-            <div>
+            <ButtonModal>
                 <button onClick={() => setNumber(number + 10)}>
                     Carregar Mais
                 </button>
-            </div>
+            </ButtonModal>
         </>
     )
 }

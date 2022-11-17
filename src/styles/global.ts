@@ -9,7 +9,14 @@ export default createGlobalStyle`
 body{
     font-family: 'Roboto Condensed', sans-serif;
 }
-ul, ol, li {
+ul, ol, li,a {
         list-style: none;
+        text-decoration: none;
+}
+button{
+    cursor: pointer;
+}
+img{
+    border-radius: 5px;
 }
 `

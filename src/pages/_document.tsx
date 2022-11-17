@@ -8,7 +8,6 @@ import Document, {
     NextScript,
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import { Container } from '../styles/modal'
 
 export default class MyDocument extends Document {
     static async getInitialProps(
@@ -45,14 +44,14 @@ export default class MyDocument extends Document {
                 <Head>
                     <meta charSet="utf-8" />
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;1,400&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&display=swap"
                         rel="stylesheet"
-                    />
+                    ></link>
                 </Head>
-                <Container>
+                <body>
                     <Main />
                     <NextScript />
-                </Container>
+                </body>
             </Html>
         )
     }

@@ -1,6 +1,11 @@
 import React, { useContext } from 'react'
 import { ArticlesContext } from '../context/ArticlesContext'
-import { ContainerModal, SectionModalContainer } from '../styles/modal'
+import {
+    ContainerModal,
+    SectionModalContainer,
+    TextModal,
+    TexTModalContainer,
+} from '../styles/modal'
 
 export interface IArticle {
     id: number
@@ -9,6 +14,7 @@ export interface IArticle {
     newsSite: string
     summary: string
     title: string
+    url: string
 }
 export interface IArticleProp {
     article: IArticle
@@ -18,19 +24,25 @@ const Modal = ({ article }: IArticleProp) => {
     const date = new Date(article.publishedAt).toLocaleDateString()
     const { setModal } = useContext(ArticlesContext)
     return (
-        <SectionModalContainer>
+        <SectionModalContainer onClick={() => setModal(false)}>
             <ContainerModal>
-                <img src={article.imageUrl} alt="" />
+                <TexTModalContainer>
+                    <img src={article.imageUrl} alt="" />
 
+                    <TextModal>
+                        <h2>{article.title}</h2>
+                        <span>{date}</span>
+                        <p>{article.summary}</p>
+                    </TextModal>
+                </TexTModalContainer>
                 <div>
-                    <h2>{article.title}</h2>
-                    <span>{date}</span>
-                    <p>{article.summary}</p>
-                </div>
-                <div>
-                    <button onClick={() => setModal(false)}>
+                    <a
+                        href={article.url}
+                        target="_blank"
+                        onClick={() => setModal(false)}
+                    >
                         Ir para site
-                    </button>
+                    </a>
                 </div>
             </ContainerModal>
         </SectionModalContainer>

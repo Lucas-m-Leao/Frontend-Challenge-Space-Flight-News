@@ -27,6 +27,7 @@ export interface IArticleContext {
     setNumber: Dispatch<SetStateAction<number>>
     setSearch: Dispatch<SetStateAction<string>>
     setModal: Dispatch<SetStateAction<boolean>>
+    setSort: Dispatch<SetStateAction<string>>
 }
 
 export interface IArticleProvide {
@@ -37,6 +38,7 @@ export const ArticlesContext = createContext<IArticleContext>(
 )
 
 export const ArticlesProvider = ({ children }: IArticleProvide) => {
+    const [sort, setSort] = useState<string>('')
     const [modal, setModal] = useState<boolean>(false)
     const [search, setSearch] = useState<string>('')
     const [number, setNumber] = useState<number>(10)
@@ -45,15 +47,23 @@ export const ArticlesProvider = ({ children }: IArticleProvide) => {
     useEffect(() => {
         axios
             .get(
-                `https://api.spaceflightnewsapi.net/v3/articles?title_contains=${search}&_limit=${number}`
+                `https://api.spaceflightnewsapi.net/v3/articles?title_contains=${search}&_limit=${number}&_sort=${sort}`
             )
             .then(ress => setData(ress.data))
             .catch(error => error)
-    }, [search, number])
+    }, [search, number, sort])
 
     return (
         <ArticlesContext.Provider
-            value={{ data, number, setNumber, setSearch, setModal, modal }}
+            value={{
+                data,
+                number,
+                setNumber,
+                setSearch,
+                setModal,
+                modal,
+                setSort,
+            }}
         >
             {children}
         </ArticlesContext.Provider>

@@ -3,7 +3,7 @@ import { NavContainer, SearchContainer } from '../styles/nav'
 import { BiSearch } from 'react-icons/bi'
 import { ArticlesContext } from '../context/ArticlesContext'
 const Nav = () => {
-    const { setSearch } = useContext(ArticlesContext)
+    const { setSearch, setSort } = useContext(ArticlesContext)
     const [data, setData] = useState('')
     return (
         <NavContainer>
@@ -19,9 +19,9 @@ const Nav = () => {
                     <BiSearch className="lupa" />
                 </button>
             </SearchContainer>
-            <select>
-                <option value="Mais antigas">Mais antigas</option>
-                <option value="Mais recentes">Mais recentes</option>
+            <select onChange={e => setSort(e.target.value)}>
+                <option value="">Mais recentes</option>
+                <option value="publishedAt">Mais antigas</option>
             </select>
         </NavContainer>
     )
