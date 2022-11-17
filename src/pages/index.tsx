@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import Card from '../components/card'
-import MiddleIcon from '../components/MiddleIcon'
+import MiddleIcon from '../components/middleIcon'
 import Modal from '../components/modal'
 import Nav from '../components/nav'
 import { ArticlesContext, IArticle } from '../context/ArticlesContext'

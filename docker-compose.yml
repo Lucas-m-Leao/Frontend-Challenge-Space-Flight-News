@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
     front-end:
@@ -6,5 +6,3 @@ services:
         build: .
         ports:
             - '3001:3000'
-
-        command: bash -c "yarn dev"

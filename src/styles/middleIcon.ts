@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const IconContainer = styled.section`
+    gap: 22px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,6 +12,8 @@ export const IconContainer = styled.section`
         border-radius: 100%;
     }
     h2 {
+        font-weight: 700;
+        font-size: 2.2rem;
     }
     hr {
         width: 100%;

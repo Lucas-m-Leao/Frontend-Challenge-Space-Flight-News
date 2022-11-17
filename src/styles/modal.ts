@@ -20,6 +20,8 @@ export const ContainerModal = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 22px;
+    gap: 10px;
     img {
         width: 100%;
         height: 30%;
@@ -33,6 +35,7 @@ export const ContainerModal = styled.div`
         background-color: ${prop => prop.theme.color.background};
         color: #fff;
         border-radius: 3px;
+        margin-bottom: 20px;
     }
 
     @media (min-width: 768px) {
